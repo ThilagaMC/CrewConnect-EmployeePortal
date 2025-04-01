@@ -30,8 +30,7 @@ const App = () => {
   const [employeeData, setEmployeeData] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const API_BASE_URL =
-    import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
+  const API_BASE_URL ="https://crewconnect-employeeportal-1.onrender.com";
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -156,7 +155,6 @@ const App = () => {
                       )}
 
                       <Route path="/projects" element={<ProjectManagement />} />
-                      <Route path="/orders" element={<Order />} />
                       <Route
                         path="/public-holidays"
                         element={<PublicHolidays />}

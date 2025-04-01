@@ -11,6 +11,7 @@ const AuthPage = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  const BASE_URL='https://crewconnect-employeeportal-1.onrender.com'
   const storeUserIdInCache = async (userID) => {
     try {
       const cache = await caches.open("user-cache");
@@ -47,7 +48,7 @@ const AuthPage = () => {
     }
 
     setLoading(true);
-    const apiUrl = "http://localhost:5000";
+    const apiUrl = BASE_URL;
     const endpoint = isLogin ? "/login" : "/register";
     const requestBody = isLogin ? { email, password } : { username, email, password, role };
 
