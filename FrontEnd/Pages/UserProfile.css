@@ -1,0 +1,271 @@
+/* UserProfile.css - Responsive Styles */
+
+/* Base Variables */
+:root {
+  --primary-color: #4361ee;
+  --primary-light: rgba(67, 97, 238, 0.1);
+  --text-color: #2b2d42;
+  --text-light: #6c757d;
+  --bg-color: #ffffff;
+  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --transition-speed: 0.3s;
+  --border-radius: 12px;
+}
+
+/* Mobile First Approach */
+.profile-picture-container {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto 1rem;
+}
+
+.profile-picture {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: var(--card-shadow);
+}
+
+.profile-picture-edit {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.card {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1rem 1.25rem;
+}
+
+.nav-tabs {
+  border-bottom: none;
+}
+
+.nav-tabs .nav-link {
+  border: none;
+  color: var(--text-light);
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--primary-color);
+  border-bottom: 3px solid var(--primary-color);
+  background: transparent;
+}
+
+.input-group-text {
+  background-color: #f8f9fa;
+  color: var(--text-light);
+}
+
+.btn {
+  border-radius: 50px;
+  padding: 0.5rem 1.25rem;
+  font-weight: 500;
+  transition: all var(--transition-speed) ease;
+}
+
+/* Header Styles */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #3a0ca3 100%);
+  color: white;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width: 767.98px) {
+  .profile-details {
+    text-align: center;
+  }
+  
+  .profile-info-card {
+    margin-top: 1rem;
+  }
+  
+  .nav-tabs .nav-link {
+    font-size: 0.85rem;
+    padding: 0.75rem 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .profile-picture {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .profile-picture-edit {
+    width: 36px;
+    height: 36px;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .profile-picture {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .nav-tabs .nav-link {
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* Form Element Enhancements */
+.form-control, .form-select {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  border: 1px solid #dee2e6;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.25);
+}
+
+/* Status Badges */
+.badge {
+  font-weight: 500;
+  padding: 0.35em 0.65em;
+}
+
+/* Loading Spinner */
+.spinner-grow {
+  animation: spinner-grow 1s ease-in-out infinite;
+}
+
+@keyframes spinner-grow {
+  0% { transform: scale(0); }
+  50% { opacity: 1; }
+}
+
+/* Utility Classes */
+.text-muted {
+  color: var(--text-light) !important;
+}
+
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+/* Button States */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: #3a56e8;
+  border-color: #3a56e8;
+}
+
+.btn-outline-primary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Tab Content Animation */
+.tab-content {
+  animation: fadeIn var(--transition-speed) ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive Padding Adjustments */
+@media (max-width: 575.98px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .card-body {
+    padding: 1rem;
+  }
+}
+
+/* Profile Info Cards */
+.profile-info-card .d-flex {
+  margin-bottom: 0.75rem;
+}
+
+.profile-info-card i {
+  width: 24px;
+  text-align: center;
+}
+
+/* Password Form Specific */
+.password-form .form-label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.password-form .form-text {
+  font-size: 0.8rem;
+}
+
+/* Edit Mode Adjustments */
+.edit-mode .form-group {
+  margin-bottom: 1rem;
+}
+
+/* Add these styles if needed */
+.img-thumbnail {
+  transition: all 0.3s ease;
+}
+
+.img-thumbnail:hover {
+  opacity: 0.9;
+}
+
+.btn-position-absolute {
+  transform: translate(50%, 50%);
+}
+
+/* Loading overlay */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}

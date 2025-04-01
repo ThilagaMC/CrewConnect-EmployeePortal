@@ -1,0 +1,167 @@
+.mood-tracker-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Card Styling */
+.card {
+  border-radius: 12px;
+  border: none;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card-header {
+  padding: 1rem 1.5rem;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Mood Icons */
+.mood-icon {
+  transition: transform 0.2s ease;
+}
+
+.mood-icon-button:hover .mood-icon {
+  transform: scale(1.2);
+}
+
+/* Intensity Slider */
+.mood-intensity-slider {
+  height: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.mood-intensity-slider::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  margin-top: -6px;
+  background-color: #4361ee;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.mood-intensity-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+}
+
+/* Note Input */
+.mood-note-input {
+  border-radius: 8px;
+  padding: 0.75rem;
+  border: 1px solid #dee2e6;
+  transition: all 0.3s ease;
+}
+
+.mood-note-input:focus {
+  border-color: #4361ee;
+  box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.25);
+}
+
+/* History List */
+.mood-history-list {
+  max-height: 500px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.mood-entry {
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+.mood-entry:hover {
+  background-color: #f8f9fa;
+}
+
+.mood-entry.expanded {
+  background-color: #f8f9fa;
+}
+
+.mood-note {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.mood-note.show {
+  max-height: 200px;
+}
+
+/* Custom colors */
+.bg-purple {
+  background-color: #6f42c1 !important;
+}
+
+/* Badges */
+.mood-badge {
+  padding: 0.5rem 0.75rem;
+  border-radius: 50px;
+}
+
+/* Buttons */
+.mood-icon-button {
+  transition: all 0.2s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+}
+
+.mood-icon-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .card-body {
+    padding: 1.25rem;
+  }
+  
+  .mood-entry {
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .mood-tracker-container {
+    padding: 0.5rem;
+  }
+  
+  .mood-icon-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.875rem;
+  }
+  
+  .mood-badge {
+    font-size: 0.875rem;
+    padding: 0.4rem 0.7rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-header {
+    padding: 0.75rem 1rem;
+  }
+  
+  .card-body {
+    padding: 1rem;
+  }
+  
+  .mood-entry {
+    padding: 0.75rem;
+  }
+  
+  .btn-group-sm > .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+  }
+}

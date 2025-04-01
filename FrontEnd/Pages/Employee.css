@@ -1,0 +1,340 @@
+/* ===== Employee Management System - Enhanced Styles ===== */
+.employee-management-system {
+  /* Updated Color System */
+  --ems-primary: #4361ee;
+  --ems-primary-dark: #3a0ca3;
+  --ems-primary-light: #4cc9f0;
+  --ems-danger: #f72585;
+  --ems-success: #2ecc71;
+  --ems-warning: #f8961e;
+  --ems-info: #4895ef;
+  --ems-secondary: #6c757d;
+  
+  /* Neutral Colors */
+  --ems-text-dark: #2b2d42;
+  --ems-text-medium: #4a4e69;
+  --ems-text-light: #8d99ae;
+  --ems-bg-light: #f8f9fa;
+  --ems-border-color: rgba(0, 0, 0, 0.08);
+  --ems-card-bg: #ffffff;
+  
+  /* Design Tokens */
+  --ems-border-radius: 12px;
+  --ems-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --ems-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --ems-focus-ring: 0 0 0 3px rgba(67, 97, 238, 0.3);
+}
+
+/* === Base Styles === */
+.employee-management-system {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.5;
+  color: var(--ems-text-medium);
+  background-color: var(--ems-bg-light);
+  min-height: 100vh;
+}
+
+.employee-management-system h1,
+.employee-management-system h2,
+.employee-management-system h3 {
+  color: var(--ems-text-dark);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.employee-management-system .ems-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* === Controls Section === */
+.employee-management-system .ems-controls {
+  background-color: var(--ems-card-bg);
+  border-radius: var(--ems-border-radius);
+  box-shadow: var(--ems-box-shadow);
+  border: none;
+}
+
+.employee-management-system .input-group-text {
+  background-color: var(--ems-bg-light);
+  border-right: none;
+}
+
+.employee-management-system .form-control,
+.employee-management-system .form-select {
+  border-radius: var(--ems-border-radius);
+  border-left: none;
+  padding: 0.75rem 1rem;
+  transition: var(--ems-transition);
+}
+
+.employee-management-system .form-control:focus,
+.employee-management-system .form-select:focus {
+  border-color: var(--ems-primary);
+  box-shadow: var(--ems-focus-ring);
+}
+
+/* === Employee Grid === */
+.employee-management-system .ems-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 0.25rem;
+}
+
+/* === Employee Card === */
+.employee-management-system .ems-card {
+  background: var(--ems-card-bg);
+  border-radius: var(--ems-border-radius);
+  overflow: hidden;
+  box-shadow: var(--ems-box-shadow);
+  transition: var(--ems-transition);
+  border: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.employee-management-system .ems-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Card Header */
+.employee-management-system .ems-card-header {
+  height: 120px;
+  position: relative;
+  background: linear-gradient(135deg, var(--ems-primary) 0%, var(--ems-primary-dark) 100%);
+}
+.employee-management-system .status-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+}
+
+/* Card Avatar */
+.employee-management-system .ems-card-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid white;
+  object-fit: cover;
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: var(--ems-transition);
+  background-color: #f0f0f0;
+}
+
+.employee-management-system .ems-card:hover .ems-card-avatar {
+  transform: translateX(-50%) scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Body */
+.employee-management-system .ems-card-body {
+  padding: 60px 1.5rem 1.5rem;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.employee-management-system .ems-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--ems-text-dark);
+}
+
+.employee-management-system .ems-card-role {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: rgba(67, 97, 238, 0.08);
+  /* color: var(--ems-primary); */
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+.employee-management-system .ems-card-email {
+  color: var(--ems-text-medium);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.employee-management-system .ems-card-email::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: rgba(67, 97, 238, 0.1);
+}
+
+.employee-management-system .employee-details {
+  margin-top: auto;
+  text-align: left;
+}
+
+.employee-management-system .detail-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.employee-management-system .detail-item i {
+  margin-right: 0.75rem;
+  color: var(--ems-primary);
+  width: 20px;
+  text-align: center;
+}
+
+/* Card Footer */
+.employee-management-system .ems-card-footer {
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-top: 1px solid var(--ems-border-color);
+}
+
+.employee-management-system .ems-card-footer .btn {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  border-radius: 6px;
+}
+
+/* === Empty State === */
+.employee-management-system .empty-state {
+  padding: 3rem;
+  background-color: white;
+  border-radius: var(--ems-border-radius);
+  box-shadow: var(--ems-box-shadow);
+}
+
+.employee-management-system .empty-state i {
+  font-size: 3rem;
+  opacity: 0.5;
+}
+
+/* === Modal Styles === */
+.employee-management-system .modal-content {
+  border: none;
+  border-radius: var(--ems-border-radius);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.employee-management-system .modal-header {
+  border-bottom: none;
+  padding: 1.5rem;
+}
+
+.employee-management-system .modal-title {
+  font-weight: 600;
+}
+
+.employee-management-system .modal-body {
+  padding: 2rem;
+}
+
+.employee-management-system .modal-footer {
+  border-top: none;
+  padding: 1.5rem;
+  background-color: var(--ems-bg-light);
+}
+
+/* Delete Modal Specific */
+.employee-management-system #deleteModal .modal-content {
+  border: 2px solid var(--ems-danger);
+}
+
+/* Form Styles */
+.employee-management-system .form-label {
+  font-weight: 500;
+  color: var(--ems-text-medium);
+  margin-bottom: 0.5rem;
+}
+
+/* === Responsive Adjustments === */
+@media (max-width: 1200px) {
+  .employee-management-system .ems-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 992px) {
+  .employee-management-system .ems-controls .col-md-2 {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .employee-management-system .ems-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .employee-management-system .ems-header .badge {
+    margin-top: 1rem;
+  }
+  
+  .employee-management-system .modal-dialog {
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .employee-management-system .ems-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .employee-management-system .container-fluid {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .employee-management-system .modal-body {
+    padding: 1.5rem 1rem;
+  }
+  
+  .employee-management-system .ems-card-footer {
+    flex-direction: column;
+  }
+  
+  .employee-management-system .ems-card-footer .btn {
+    width: 100%;
+  }
+}
+
+/* === Animation === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.employee-management-system .ems-card {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Delay animations for grid items */
+.employee-management-system .ems-card:nth-child(1) { animation-delay: 0.1s; }
+.employee-management-system .ems-card:nth-child(2) { animation-delay: 0.2s; }
+.employee-management-system .ems-card:nth-child(3) { animation-delay: 0.3s; }
+.employee-management-system .ems-card:nth-child(4) { animation-delay: 0.4s; }
+.employee-management-system .ems-card:nth-child(5) { animation-delay: 0.5s; }
+.employee-management-system .ems-card:nth-child(6) { animation-delay: 0.6s; }

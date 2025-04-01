@@ -1,0 +1,37 @@
+{
+  "name": "crewconnect-backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "build": "echo 'No build step required'",
+    "render-setup": "node -v && npm -v && npm install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ThilagaMC/CrewConnect-EmployeePortal"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-validator": "^7.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.13.1",
+    "nodemailer": "^6.9.16"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
