@@ -4,11 +4,13 @@ import axios from 'axios';
 import { 
   FaRegSmile, FaRegFrown, FaRegMeh, FaRegLaughSquint, 
   FaRegAngry, FaRegFlushed, FaCalendarAlt, FaEdit, 
-  FaTrashAlt, FaPlus, FaChevronDown, FaChevronUp,
+  FaTrashAlt, FaPlus,
   FaExclamationTriangle
 } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './MoodTracker.css';
+
+const BASE_URL='https://crewconnect-employeeportal.onrender.com'
 
 const moodIcons = {
   happy: FaRegSmile,
@@ -48,7 +50,7 @@ function MoodTracker({ username, userId }) {
   const [expandedEntry, setExpandedEntry] = useState(null);
 
   const moodApi = axios.create({
-    baseURL:'http://localhost:5000',
+    baseURL:BASE_URL,
     headers: {
       'Content-Type': 'application/json'
     }
@@ -65,8 +67,8 @@ function MoodTracker({ username, userId }) {
     setError(null);
     try {
       const [todayResponse, historyResponse] = await Promise.all([
-        moodApi.get(`http://localhost:5000/moods/today/${userId}`),
-        moodApi.get(`http://localhost:5000/moods/${userId}?range=${timeRange}`)
+        moodApi.get(`${BASE_URL}/moods/today/${userId}`),
+        moodApi.get(`${BASE_URL}/moods/${userId}?range=${timeRange}`)
       ]);
 
       setTodayMood(todayResponse.data.data);
@@ -101,7 +103,7 @@ function MoodTracker({ username, userId }) {
     setError(null);
     
     try {
-      const response = await moodApi.post(`http://localhost:5000/moods/${userId}`, formData);
+      const response = await moodApi.post(`${BASE_URL}/moods/${userId}`, formData);
       setTodayMood(response.data.data);
       await fetchMoods();
     } catch (err) {
@@ -250,7 +252,7 @@ function MoodTracker({ username, userId }) {
             <div className="card-header text-white d-flex justify-content-between align-items-center" style={{background:"#4361ee"}}>
               <h2 className="h5 mb-0 d-flex align-items-center">
                 <FaCalendarAlt size={20} className="me-2" />
-                Today's Status
+                Today&apos;s Status
               </h2>
               {todayMood && (
                 <button 
@@ -316,7 +318,7 @@ function MoodTracker({ username, userId }) {
                     disabled={loading}
                   >
                     <FaEdit size={16} className="me-2" />
-                    Edit Today's Entry
+                    Edit Today&apos;s Entry
                   </button>
                 </>
               ) : (

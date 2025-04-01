@@ -28,6 +28,7 @@ ChartJS.register(
 );
 
 const Dashboard = () => {
+  const BASE_URL='https://crewconnect-employeeportal.onrender.com'
   const today = new Date().toISOString().split("T")[0];
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -94,11 +95,11 @@ const Dashboard = () => {
 
         // API endpoints
         const endpoints = [
-          axios.get("http://localhost:5000/employees/TopRated"),
-          axios.get(`http://localhost:5000/employees/email/${userId}`),
-          axios.get("http://localhost:5000/employees"),
-          axios.get(`http://localhost:5000/leave-requests/employee/${userId}`),
-          axios.get(`http://localhost:5000/todos/filtered/${userId}`),
+          axios.get(`${BASE_URL}/employees/TopRated`),
+          axios.get(`${BASE_URL}/employees/email/${userId}`),
+          axios.get(`${BASE_URL}/employees`),
+          axios.get(`${BASE_URL}/leave-requests/employee/${userId}`),
+          axios.get(`${BASE_URL}/todos/filtered/${userId}`),
         ];
 
         // Fetch all data in parallel

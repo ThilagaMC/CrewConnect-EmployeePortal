@@ -4,6 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const LeaveApplication = () => {
+  const BASE_URL = 'https://crewconnect-employeeportal.onrender.com'
   const [formData, setFormData] = useState({
     userID: "",
     username: "",
@@ -23,7 +24,7 @@ const LeaveApplication = () => {
       if (cachedID) {
         setFormData((prev) => ({ ...prev, userID: cachedID }));
         try {
-          const response = await axios.get(`http://localhost:5000/employees/email/${cachedID}`);
+          const response = await axios.get(`${BASE_URL}/employees/email/${cachedID}`);
           setFormData((prev) => ({
             ...prev,
             username: response.data.username || "",
@@ -73,7 +74,7 @@ const LeaveApplication = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:5000/leave-requests", formData);
+      const response = await axios.post(`${BASE_URL}/leave-requests`, formData);
       toast.success(response.data.message || "Leave request submitted successfully!");
       setFormData((prev) => ({
         ...prev,

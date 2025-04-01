@@ -3,6 +3,8 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
+
+const BASE_URL ='https://crewconnect-employeeportal.onrender.com'
 const getUserIdFromCache = async () => {
   if ("caches" in window) {
     try {
@@ -51,10 +53,10 @@ const ProjectManagement = () => {
     const fetchData = async () => {
       try {
         const [projectsResponse, userResponse] = await Promise.all([
-          axios.get("http://localhost:5000/projects"),
+          axios.get(`${BASE_URL}/projects`),
           getUserIdFromCache().then((userID) =>
             userID
-              ? axios.get(`http://localhost:5000/employees/email/${userID}`)
+              ? axios.get(`${BASE_URL}/employees/email/${userID}`)
               : null
           ),
         ]);
@@ -101,12 +103,12 @@ const ProjectManagement = () => {
 
     try {
       if (editingId) {
-        await axios.put(`http://localhost:5000/projects/${editingId}`, project);
+        await axios.put(`${BASE_URL}/projects/${editingId}`, project);
         setProjects((prev) =>
           prev.map((p) => (p._id === editingId ? { ...p, ...project } : p))
         );
       } else {
-        const res = await axios.post("http://localhost:5000/projects", project);
+        const res = await axios.post(`${BASE_URL}/projects`, project);
         setProjects((prev) => [...prev, res.data]);
       }
       handleCloseModal();
@@ -155,7 +157,7 @@ const ProjectManagement = () => {
       return;
 
     try {
-      await axios.delete(`http://localhost:5000/projects/${id}`);
+      await axios.delete(`${BASE_URL}/projects/${id}`);
       setProjects((prev) => prev.filter((p) => p._id !== id));
     } catch (err) {
       console.error(err);

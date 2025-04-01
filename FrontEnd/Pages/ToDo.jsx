@@ -33,6 +33,7 @@ import {
 } from "react-feather";
 import "./TodoList.css";
 
+const BASE_URL='https://crewconnect-employeeportal.onrender.com'
 const TodoList = () => {
   // State
   const [todos, setTodos] = useState([]);
@@ -128,7 +129,7 @@ const TodoList = () => {
       params.append("sortOrder", sortConfig.direction);
 
       const res = await axios.get(
-        `http://localhost:5000/todos/${userId}?${params.toString()}`
+        `${BASE_URL}/todos/${userId}?${params.toString()}`
       );
       setTodos(res.data || []);
       setError(null);
@@ -155,14 +156,14 @@ const TodoList = () => {
 
         if (action === "create") {
           res = await axios.post(
-            "http://localhost:5000/todos",
+            `${BASE_URL}/todos`,
             payload,
             config
           );
           setTodos((prev) => [...prev, res.data]);
         } else if (action === "update") {
           res = await axios.patch(
-            `http://localhost:5000/todos/${id}`,
+            `${BASE_URL}/todos/${id}`,
             payload,
             config
           );
@@ -170,7 +171,7 @@ const TodoList = () => {
           setEditTodo(null);
         }
       } else if (action === "delete") {
-        res = await axios.delete(`http://localhost:5000/todos/${id}`, config);
+        res = await axios.delete(`${BASE_URL}/todos/${id}`, config);
         setTodos((prev) => prev.filter((t) => t._id !== id));
       }
 

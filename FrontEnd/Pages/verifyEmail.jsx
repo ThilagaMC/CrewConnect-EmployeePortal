@@ -3,6 +3,7 @@ import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure this is imported correctly
 
+const BASE_URL ='https://crewconnect-employeeportal.onrender.com'
 const VerifyEmail = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ const VerifyEmail = () => {
     }
 
     axios
-      .get(`http://localhost:5000/verify?token=${token}`)
+      .get(`${BASE_URL}/verify?token=${token}`)
       .then((response) => {
         setMessage(response.data.message);
         setIsSuccess(response.data.success);

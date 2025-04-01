@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
 const ActionHandler = () => {
+  const BASE_URL="https://crewconnect-employeeportal.onrender.com"
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const [loading, setLoading] = useState(true);
@@ -28,7 +29,7 @@ const ActionHandler = () => {
 
         // Create query string from params
         const queryString = new URLSearchParams(params).toString();
-        const url = `http://localhost:5000/leave-requests/process-action?${queryString}`;
+        const url = `${BASE_URL}/leave-requests/process-action?${queryString}`;
 
         // Set up abort controller for timeout
         const controller = new AbortController();

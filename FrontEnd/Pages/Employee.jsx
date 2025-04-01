@@ -5,6 +5,7 @@ import "./Employee.css";
 import { format } from 'date-fns';
 
 const UserList = () => {
+  const BASE_URL='https://crewconnect-employeeportal.onrender.com'
   const [employees, setEmployees] = useState([]);
   const [loading, setLoading] = useState(true);
   const [userRole, setUserRole] = useState("");
@@ -69,7 +70,7 @@ const UserList = () => {
       setLoading(true);
       
       // Fetch employees
-      const empResponse = await axios.get('http://localhost:5000/employees');
+      const empResponse = await axios.get(`${BASE_URL}/employees`);
       let employeesArray = [];
       
       if (Array.isArray(empResponse.data)) {
@@ -90,7 +91,7 @@ const UserList = () => {
       // Fetch user role if userId exists
       if (userId) {
         try {
-          const userResponse = await axios.get(`http://localhost:5000/employees/email/${userId}`);
+          const userResponse = await axios.get(`${BASE_URL}/employees/email/${userId}`);
           setUserRole(userResponse.data.role);
         } catch (error) {
           console.error("Error fetching user role:", error);
@@ -332,7 +333,7 @@ const UserList = () => {
     }
     
     try {
-      await axios.post("http://localhost:5000/employees", formData);
+      await axios.post(`${BASE_URL}/employees`, formData);
       await refreshData();
       const modal = window.bootstrap.Modal.getInstance(document.getElementById("editModal"));
       modal.hide();
@@ -350,7 +351,7 @@ const UserList = () => {
     
     try {
       await axios.put(
-        `http://localhost:5000/employees/email/${selectedEmployee._id}`,
+        `${BASE_URL}/employees/email/${selectedEmployee._id}`,
         formData
       );
       await refreshData();
@@ -365,7 +366,7 @@ const UserList = () => {
   const handleDelete = async () => {
     if (!selectedEmployee) return;
     try {
-      await axios.delete(`http://localhost:5000/employees/${selectedEmployee._id}`);
+      await axios.delete(`${BASE_URL}/employees/${selectedEmployee._id}`);
       await refreshData();
       setShowDeleteModal(false);
     } catch (error) {

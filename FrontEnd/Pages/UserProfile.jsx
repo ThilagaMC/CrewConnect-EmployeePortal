@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./UserProfile.css";
 
+const BASE_URL='https://crewconnect-employeeportal.onrender.com'
 const UserProfile = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
@@ -93,7 +94,7 @@ const UserProfile = () => {
     const fetchUserData = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get(`http://localhost:5000/employees/email/${userID}`);
+        const response = await axios.get(`${BASE_URL}/employees/email/${userID}`);
         setUser(response.data);        
         setEditedUser({
           username: response.data.username || "",
@@ -144,7 +145,7 @@ const UserProfile = () => {
        console.log(updateData);
         
       const response = await axios.put(
-        `http://localhost:5000/employees/email/${userID}`,
+        `${BASE_URL}/employees/email/${userID}`,
         updateData,
         {
           headers: {
@@ -173,7 +174,7 @@ const UserProfile = () => {
 
     try {
       setIsLoading(true);
-      await axios.put(`http://localhost:5000/employees/email/${userID}/password`, {
+      await axios.put(`${BASE_URL}/employees/email/${userID}/password`, {
         currentPassword: passwordData.currentPassword,
         newPassword: passwordData.newPassword
       });
@@ -458,7 +459,7 @@ const UserProfile = () => {
                                 </div>
                               </div>
                               <div className="col-md-6">
-                                <label className="form-label">Mother's Name</label>
+                                <label className="form-label">Mother&apos;s Name</label>
                                 <div className="input-group">
                                   <span className="input-group-text">
                                     <i className="bi bi-gender-female"></i>
@@ -474,7 +475,7 @@ const UserProfile = () => {
                                 </div>
                               </div>
                               <div className="col-md-6">
-                                <label className="form-label">Father's Name</label>
+                                <label className="form-label">Father&apos;s Name</label>
                                 <div className="input-group">
                                   <span className="input-group-text">
                                     <i className="bi bi-gender-male"></i>
@@ -742,7 +743,7 @@ const UserProfile = () => {
                                       <i className="bi bi-gender-female fs-5"></i>
                                     </div>
                                     <div>
-                                      <h6 className="mb-0 text-muted">Mother's Name</h6>
+                                      <h6 className="mb-0 text-muted">Mother&apos;s Name</h6>
                                       <p className="mb-0 fw-bold">{user.motherName || 'Not specified'}</p>
                                     </div>
                                   </div>
@@ -751,7 +752,7 @@ const UserProfile = () => {
                                       <i className="bi bi-gender-male fs-5"></i>
                                     </div>
                                     <div>
-                                      <h6 className="mb-0 text-muted">Father's Name</h6>
+                                      <h6 className="mb-0 text-muted">Father&apos;s Name</h6>
                                       <p className="mb-0 fw-bold">{user.fatherName || 'Not specified'}</p>
                                     </div>
                                   </div>
