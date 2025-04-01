@@ -31,7 +31,7 @@ import {
   Filter,
   Sliders,
 } from "react-feather";
-import "./TodoList.css";
+import "../Pages/ToDoList.css";
 
 const BASE_URL='https://crewconnect-employeeportal.onrender.com'
 const TodoList = () => {
