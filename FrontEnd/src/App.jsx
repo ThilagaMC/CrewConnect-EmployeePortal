@@ -30,7 +30,7 @@ const App = () => {
   const [employeeData, setEmployeeData] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const API_BASE_URL ="https://crewconnect-employeeportal.onrender.com";
+  const BASE_URL ="https://crewconnect-employeeportal.onrender.com";
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -54,7 +54,7 @@ const App = () => {
       const fetchEmployeeData = async () => {
         try {
           const response = await axios.get(
-            `${API_BASE_URL}/employees/email/${userID}`
+            `${BASE_URL}/employees/email/${userID}`
           );
           setEmployeeData(response.data);
         } catch (error) {
@@ -63,7 +63,7 @@ const App = () => {
       };
       fetchEmployeeData();
     }
-  }, [userID, API_BASE_URL]);
+  }, [userID, BASE_URL]);
 
   const getUserIdFromCache = async () => {
     if ("caches" in window) {
