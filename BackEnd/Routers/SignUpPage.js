@@ -11,7 +11,7 @@ const signUpRouter = express.Router();
 const JWT_SECRET = process.env.JWT_SECRET || "default-secret-key";
 const EMAIL_USER = process.env.EMAIL_USER;
 const EMAIL_PASS = process.env.EMAIL_PASS;
-const CLIENT_URL = process.env.CLIENT_URL || "http://localhost:5173";
+const CLIENT_URL = process.env.FRONTEND_URL || "http://localhost:5173";
 const BCRYPT_SALT_ROUNDS = parseInt(process.env.BCRYPT_SALT_ROUNDS, 10) || 10;
 
 // ✅ Configure Nodemailer Transporter
