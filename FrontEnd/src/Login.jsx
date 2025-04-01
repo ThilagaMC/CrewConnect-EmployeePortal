@@ -11,7 +11,7 @@ const AuthPage = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const BASE_URL='https://crewconnect-employeeportal-1.onrender.com'
+  const BASE_URL='https://crewconnect-employeeportal.onrender.com'
   const storeUserIdInCache = async (userID) => {
     try {
       const cache = await caches.open("user-cache");

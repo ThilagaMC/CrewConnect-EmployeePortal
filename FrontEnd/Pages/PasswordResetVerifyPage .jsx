@@ -3,6 +3,8 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import axios from "axios";
 import authImage from "../assets/auth-illustration.svg";
 
+
+const BASE_URL='https://crewconnect-employeeportal.onrender.com'
 const PasswordResetVerifyPage = () => {
   const [searchParams] = useSearchParams();
   const [newPassword, setNewPassword] = useState("");
@@ -26,7 +28,7 @@ const PasswordResetVerifyPage = () => {
       try {
         console.log("Verifying token:", token);
         const response = await axios.post(
-          "http://localhost:5000/password-reset/verify-token",
+          `${BASE_URL}/password-reset/verify-token`,
           { token },
           {
             headers: {
@@ -79,7 +81,7 @@ const PasswordResetVerifyPage = () => {
     try {
       console.log("Resetting password for:", email);
       const response = await axios.post(
-        "http://localhost:5000/password-reset/reset-password",
+        `${BASE_URL}/password-reset/reset-password`,
         { token, newPassword },
         {
           headers: {

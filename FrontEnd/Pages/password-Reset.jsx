@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import authImage from "../assets/auth-illustration.svg";
 
+const BASE_URL='https://crewconnect-employeeportal.onrender.com'
 const PasswordResetPage = () => {
   const [email, setEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -25,7 +26,7 @@ const PasswordResetPage = () => {
     try {
       console.log("Sending reset request for:", email);
       const response = await axios.post(
-        "http://localhost:5000/password-reset/request-reset",
+        `${BASE_URL}/password-reset/request-reset`,
         { email },
         {
           headers: {
