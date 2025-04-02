@@ -21,7 +21,7 @@ const UserList = () => {
   const [formData, setFormData] = useState({
     username: "",
     email: "",
-    imgURL: "",
+    // imgURL: "",
     dob: null,
     yearOfJoin: null,
     status: "Active",
@@ -40,7 +40,7 @@ const UserList = () => {
     completedLeave: 0,
     role: "User",
     checkedIn: false,
-    image: "https://randomuser.me/api/portraits/lego/1.jpg",
+    imgURL: "https://randomuser.me/api/portraits/lego/1.jpg",
     LOP: 0,
     isActive: true,
     leaveRequests: []
@@ -245,7 +245,7 @@ const UserList = () => {
       completedLeave: 0,
       role: "User",
       checkedIn: false,
-      image: "https://randomuser.me/api/portraits/lego/1.jpg",
+      imgURL: "https://randomuser.me/api/portraits/lego/1.jpg",
       LOP: 0,
       isActive: true,
       leaveRequests: []
@@ -265,7 +265,7 @@ const UserList = () => {
     setFormData({
       username: employee.username || "",
       email: employee.email || "",
-      imgURL: employee.imgURL || "",
+      // imgURL: employee.imgURL || "",
       dob: employee.dob || "",
       yearOfJoin: employee.yearOfJoin || null,
       status: employee.status || "Active",
@@ -284,7 +284,7 @@ const UserList = () => {
       completedLeave: employee.completedLeave ?? 0,
       role: employee.role || "User",
       checkedIn: employee.checkedIn ?? false,
-      image: employee.image || "https://randomuser.me/api/portraits/lego/1.jpg",
+      imgURL: employee.imgURL || "https://randomuser.me/api/portraits/lego/1.jpg",
       LOP: employee.LOP ?? 0,
       isActive: employee.isActive ?? true,
       leaveRequests: Array.isArray(employee.leaveRequests) ? employee.leaveRequests : []
@@ -511,7 +511,7 @@ const UserList = () => {
                           )}
                         </div>
                         <img
-                          src={employee.image}
+                          src={employee.imgURL}
                           alt={employee.username}
                           className="ems-card-avatar"
                         />
@@ -579,7 +579,7 @@ const UserList = () => {
               <div className="modal-body">
                 <div className="d-flex align-items-center mb-4">
                   <img
-                    src={selectedEmployee?.image}
+                    src={selectedEmployee?.imgURL}
                     alt={selectedEmployee?.username}
                     className="rounded-circle me-3"
                     width="60"
@@ -874,8 +874,8 @@ const UserList = () => {
                         <input
                           type="text"
                           className="form-control"
-                          name="image"
-                          value={formData.image}
+                          name="imgURL"
+                          value={formData.imgURL}
                           onChange={handleInputChange}
                         />
                         <button 
@@ -883,7 +883,7 @@ const UserList = () => {
                           type="button"
                           onClick={() => setFormData({
                             ...formData,
-                            image: "https://randomuser.me/api/portraits/lego/" + 
+                            imgURL: "https://randomuser.me/api/portraits/lego/" + 
                               Math.floor(Math.random() * 10) + ".jpg"
                           })}
                         >
