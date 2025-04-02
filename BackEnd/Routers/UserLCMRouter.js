@@ -55,6 +55,8 @@ UserLCMRouter.post("/", async (req, res) => {
       checkedIn,
     } = req.body;
 
+    console.log(image);
+    
     // Validate required fields
     if (!username || !email) {
       return respond(res, 400, "Username and email are required");
