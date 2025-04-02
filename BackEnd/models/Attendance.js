@@ -8,7 +8,7 @@ const AttendanceSchema = new mongoose.Schema({
     checkOutTime: { type: String },
     status: { 
       type: String, 
-      enum: ["Check-in", "Check-out", "Break","Active","Present"],
+      enum: ["Check-in", "Check-out", "Break","Active","Present","Day Off"],
     },
     category: { 
       type: String, 
