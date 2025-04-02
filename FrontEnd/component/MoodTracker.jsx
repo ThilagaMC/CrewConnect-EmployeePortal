@@ -420,26 +420,27 @@ function MoodTracker({ username, userId }) {
                   </button>
                 </div>
                 
-                <div className={`d-flex justify-content-between align-items-center ${showMobileFilters ? 'd-block' : 'd-none d-lg-block'}`}>
-                  <small className="text-light">
-                    {formatDisplayDate(dateRange.start)} - {formatDisplayDate(dateRange.end)}
-                  </small>
-                  <div className="btn-group btn-group-sm mt-2 mt-lg-0">
-                    {['week', 'month'].map((range) => (
-                      <button
-                        key={range}
-                        className={`btn ${timeRange === range ? 'btn-light' : 'btn-outline-light'}`}
-                        onClick={() => {
-                          setTimeRange(range);
-                          setShowMobileFilters(false);
-                        }}
-                        disabled={loading}
-                      >
-                        {range.charAt(0).toUpperCase() + range.slice(1)}
-                      </button>
-                    ))}
-                  </div>
-                </div>
+                <div className={`d-flex flex-column flex-lg-row justify-content-between align-items-center ${showMobileFilters ? 'd-block' : 'd-none d-lg-flex'}`}>
+  <small className="text-light mb-2 mb-lg-0 text-center text-lg-start">
+    {formatDisplayDate(dateRange.start)} - {formatDisplayDate(dateRange.end)}
+  </small>
+  <div className="btn-group btn-group-sm w-100 w-lg-auto">
+    {['week', 'month'].map((range) => (
+      <button
+        key={range}
+        className={`btn ${timeRange === range ? 'btn-light' : 'btn-outline-light'} flex-grow-1 flex-lg-grow-0`}
+        onClick={() => {
+          setTimeRange(range);
+          setShowMobileFilters(false);
+        }}
+        disabled={loading}
+      >
+        {range.charAt(0).toUpperCase() + range.slice(1)}
+      </button>
+    ))}
+  </div>
+</div>
+
               </div>
             </div>
             <div className="card-body p-0">
