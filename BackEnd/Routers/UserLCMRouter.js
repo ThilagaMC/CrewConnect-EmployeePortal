@@ -177,7 +177,8 @@ UserLCMRouter.put("/email/:id", async (req, res) => {
     if (!updatedUser) {
       return respond(res, 404, "User not found");
     }    
-
+    console.log(updateData);
+    
     respond(res, 200, "User updated successfully", updatedUser);
   } catch (error) {
     console.log(error);
