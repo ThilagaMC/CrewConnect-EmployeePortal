@@ -69,11 +69,6 @@ const userSchema = new mongoose.Schema({
   },
   image: {
     type: String,
-    default: "default.jpg",
-  },
-  imgURL: {
-    type: String,
-    default: "/uploads/default.jpg"
   },
   LOP: { type: Number, default: 0 },
   leaveRequests: [leaveRequestSchema],

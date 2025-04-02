@@ -34,7 +34,7 @@ UserLCMRouter.post("/", async (req, res) => {
       username,
       email,
       password, // Optional password
-      imgURL,
+      image,
       dob,
       yearOfJoin,
       status,
@@ -77,7 +77,7 @@ UserLCMRouter.post("/", async (req, res) => {
       username,
       email,
       password: hashedPassword, // Null if no password is given
-      imgURL,
+      image,
       dob,
       yearOfJoin,
       status,
