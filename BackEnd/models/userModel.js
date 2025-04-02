@@ -69,6 +69,7 @@ const userSchema = new mongoose.Schema({
   },
   image: {
     type: String,
+    default:'https://randomuser.me/api/portraits/lego/1.jpg'
   },
   LOP: { type: Number, default: 0 },
   leaveRequests: [leaveRequestSchema],
