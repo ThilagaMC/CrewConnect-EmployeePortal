@@ -180,6 +180,7 @@ UserLCMRouter.put("/email/:id", async (req, res) => {
 
     respond(res, 200, "User updated successfully", updatedUser);
   } catch (error) {
+    console.log(error);
     console.error("Error updating profile:", error);
 
     if (error.name === "ValidationError") {
