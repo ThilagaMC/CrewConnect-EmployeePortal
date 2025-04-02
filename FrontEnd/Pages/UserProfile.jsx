@@ -139,15 +139,25 @@ const UserProfile = () => {
     e.preventDefault();
     try {
       setIsLoading(true);
-
-      // Create an object with only the fields we want to update
+  
+      // Create a clean object with only the data we need
       const updateData = {
-        ...editedUser,
-        email: undefined, // Remove email from update data
+        username: editedUser.username,
+        image: editedUser.image,
+        dob: editedUser.dob,
+        yearOfJoin: editedUser.yearOfJoin,
+        currentPackage: editedUser.currentPackage,
+        currentProject: editedUser.currentProject,
+        rating: editedUser.rating,
+        motherName: editedUser.motherName,
+        fatherName: editedUser.fatherName,
+        panNumber: editedUser.panNumber,
+        lastAppraisalDate: editedUser.lastAppraisalDate,
+        department: editedUser.department,
+        position: editedUser.position,
+        phone: editedUser.phone
       };
-      delete updateData.email; // Ensure email isn't sent in the update
-      console.log(updateData);
-
+  
       const response = await axios.put(
         `${BASE_URL}/employees/email/${userID}`,
         updateData,
@@ -157,7 +167,7 @@ const UserProfile = () => {
           },
         }
       );
-
+  
       setUser(response.data);
       setIsEditing(false);
       alert("Profile updated successfully!");
@@ -684,41 +694,37 @@ const UserProfile = () => {
                                   />
                                 </div>
                               </div>
+
                               <div className="col-md-6">
                                 <label className="form-label">Department</label>
-                                <span className="input-group-text">
-                                  <i className="bi bi-building"></i>
-                                </span>
-                                <select
-                                  className={`form-select input-group`}
-                                  name="department"
-                                  value={editedUser.department}
-                                  onChange={setEditedUser}
-                                  required
-                                >
-                                  <option value="">Select Department</option>
-                                  <option value="Engineering">
-                                    Engineering
-                                  </option>
-                                  <option value="HR">HR</option>
-                                  <option value="Marketing">Marketing</option>
-                                  <option value="Finance">Finance</option>
-                                  <option value="Sales">Sales</option>
-                                </select>
-                                {/* <div className="input-group">
+                                <div className="input-group">
                                   <span className="input-group-text">
                                     <i className="bi bi-building"></i>
                                   </span>
-                                  <input
-                                    type="text"
-                                    className="form-control"
+                                  <select
+                                    className="form-select"
+                                    name="department"
                                     value={editedUser.department}
-                                    onChange={(e) => 
-                                      setEditedUser({...editedUser, department: e.target.value})
+                                    onChange={(e) =>
+                                      setEditedUser({
+                                        ...editedUser,
+                                        department: e.target.value,
+                                      })
                                     }
-                                  />
-                                </div> */}
+                                    required
+                                  >
+                                    <option value="">Select Department</option>
+                                    <option value="Engineering">
+                                      Engineering
+                                    </option>
+                                    <option value="HR">HR</option>
+                                    <option value="Marketing">Marketing</option>
+                                    <option value="Finance">Finance</option>
+                                    <option value="Sales">Sales</option>
+                                  </select>
+                                </div>
                               </div>
+
                               <div className="col-md-6">
                                 <label className="form-label">Position</label>
                                 <div className="input-group">
