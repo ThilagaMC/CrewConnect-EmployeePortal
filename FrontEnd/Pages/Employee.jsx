@@ -226,7 +226,7 @@ const UserList = () => {
     setFormData({
       username: "",
       email: "",
-      imgURL: "",
+      // imgURL: "",
       dob: null,
       yearOfJoin: null,
       status: "Active",
@@ -402,7 +402,7 @@ const UserList = () => {
           <div className="d-flex justify-content-between align-items-center">
             <div>
               <h1 className="mb-1">Employee Directory</h1>
-              <p className="text-muted mb-0">Manage your organization's workforce</p>
+              <p className="text-muted mb-0">Manage your organization&apos;s workforce</p>
             </div>
             <div className="m-2 align-items-center">
               <span className="me-3 text-muted">Total Employees:</span>
