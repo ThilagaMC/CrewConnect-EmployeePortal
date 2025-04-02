@@ -10,14 +10,17 @@
   border: none;
   overflow: hidden;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
 .card:hover {
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
 }
 
 .card-header {
   padding: 1rem 1.5rem;
+  background-color: #4361ee !important;
 }
 
 .card-body {
@@ -26,7 +29,8 @@
 
 /* Mood Icons */
 .mood-icon {
-  transition: transform 0.2s ease;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 .mood-icon-button:hover .mood-icon {
@@ -38,6 +42,7 @@
   height: 8px;
   border-radius: 4px;
   cursor: pointer;
+  -webkit-appearance: none;
 }
 
 .mood-intensity-slider::-webkit-slider-thumb {
@@ -46,11 +51,14 @@
   margin-top: -6px;
   background-color: #4361ee;
   border: none;
+  border-radius: 50%;
   transition: all 0.2s ease;
+  -webkit-appearance: none;
 }
 
 .mood-intensity-slider::-webkit-slider-thumb:hover {
   transform: scale(1.1);
+  background-color: #3a56d4;
 }
 
 /* Note Input */
@@ -59,11 +67,12 @@
   padding: 0.75rem;
   border: 1px solid #dee2e6;
   transition: all 0.3s ease;
+  min-height: 100px;
 }
 
 .mood-note-input:focus {
   border-color: #4361ee;
-  box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.15);
 }
 
 /* History List */
@@ -73,6 +82,19 @@
   scrollbar-width: thin;
 }
 
+.mood-history-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mood-history-list::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 3px;
+}
+
+.mood-history-list::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0,0,0,0.2);
+}
+
 .mood-entry {
   padding: 1rem 1.5rem;
   cursor: pointer;
@@ -80,12 +102,16 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
 }
 
+.mood-entry:last-child {
+  border-bottom: none !important;
+}
+
 .mood-entry:hover {
   background-color: #f8f9fa;
 }
 
 .mood-entry.expanded {
-  background-color: #f8f9fa;
+  background-color: #f1f3f5;
 }
 
 .mood-note {
@@ -103,10 +129,18 @@
   background-color: #6f42c1 !important;
 }
 
+.text-purple {
+  color: #6f42c1 !important;
+}
+
 /* Badges */
 .mood-badge {
   padding: 0.5rem 0.75rem;
   border-radius: 50px;
+  min-width: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Buttons */
@@ -114,28 +148,64 @@
   transition: all 0.2s ease;
   padding: 0.5rem 1rem;
   border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .mood-icon-button:hover {
   transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Filter Toggle Button */
+.filter-toggle-btn {
+  display: none;
+}
+
+/* Mobile Filter Panel */
+.mobile-filter-panel {
+  display: none;
+  padding: 0.75rem;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 0 0 8px 8px;
 }
 
 /* Responsive Adjustments */
-@media (max-width: 992px) {
+@media (max-width: 1199.98px) {
+  .mood-tracker-container {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 991.98px) {
   .card-body {
     padding: 1.25rem;
   }
   
   .mood-entry {
-    padding: 0.75rem 1rem;
+    padding: 0.9rem 1.25rem;
+  }
+
+  .mood-history-list {
+    max-height: 400px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767.98px) {
   .mood-tracker-container {
     padding: 0.5rem;
   }
   
+  .card-header {
+    padding: 0.9rem 1.25rem;
+  }
+  
+  .card-body {
+    padding: 1.1rem;
+  }
+
   .mood-icon-button {
     padding: 0.4rem 0.8rem;
     font-size: 0.875rem;
@@ -144,12 +214,28 @@
   .mood-badge {
     font-size: 0.875rem;
     padding: 0.4rem 0.7rem;
+    min-width: 36px;
+  }
+
+  .filter-toggle-btn {
+    display: flex;
+  }
+
+  .desktop-filters {
+    display: none;
+  }
+
+  .mobile-filter-panel {
+    display: block;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 575.98px) {
   .card-header {
     padding: 0.75rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
   }
   
   .card-body {
@@ -164,4 +250,31 @@
     padding: 0.25rem 0.5rem;
     font-size: 0.75rem;
   }
+
+  .mood-icon-button {
+    flex: 1;
+    min-width: calc(50% - 0.5rem);
+  }
+
+  .mood-note-input {
+    min-height: 80px;
+  }
+}
+
+/* Animation Enhancements */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mood-entry {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.mood-entry:nth-child(odd) {
+  animation-delay: 0.05s;
+}
+
+.mood-entry:nth-child(even) {
+  animation-delay: 0.1s;
 }

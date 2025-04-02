@@ -4,13 +4,12 @@ import axios from 'axios';
 import { 
   FaRegSmile, FaRegFrown, FaRegMeh, FaRegLaughSquint, 
   FaRegAngry, FaRegFlushed, FaCalendarAlt, FaEdit, 
-  FaTrashAlt, FaPlus,
-  FaExclamationTriangle
+  FaTrashAlt, FaPlus, FaExclamationTriangle, FaFilter
 } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './MoodTracker.css';
 
-const BASE_URL='https://crewconnect-employeeportal.onrender.com'
+const BASE_URL = 'https://crewconnect-employeeportal.onrender.com';
 
 const moodIcons = {
   happy: FaRegSmile,
@@ -48,9 +47,10 @@ function MoodTracker({ username, userId }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [expandedEntry, setExpandedEntry] = useState(null);
+  const [showMobileFilters, setShowMobileFilters] = useState(false);
 
   const moodApi = axios.create({
-    baseURL:BASE_URL,
+    baseURL: BASE_URL,
     headers: {
       'Content-Type': 'application/json'
     }
@@ -261,7 +261,7 @@ function MoodTracker({ username, userId }) {
                   disabled={loading}
                 >
                   <FaTrashAlt size={16} className="me-1" />
-                  Delete
+                  <span className="d-none d-sm-inline">Delete</span>
                 </button>
               )}
             </div>
@@ -334,7 +334,7 @@ function MoodTracker({ username, userId }) {
                           onClick={() => setFormData(prev => ({ ...prev, mood }))}
                         >
                           {renderMoodIcon(mood)}
-                          <span className="ms-2">
+                          <span className="ms-2 d-none d-sm-inline">
                             {mood.charAt(0).toUpperCase() + mood.slice(1)}
                           </span>
                         </button>
@@ -406,20 +406,33 @@ function MoodTracker({ username, userId }) {
           <div className="card h-100 shadow-sm border-0">
             <div className="card-header text-white" style={{background: "#4361ee"}}>
               <div className="d-flex flex-column">
-                <h2 className="h5 mb-3 d-flex align-items-center">
-                  <FaCalendarAlt size={20} className="me-2" />
-                  Mood History - {timeRange.charAt(0).toUpperCase() + timeRange.slice(1)} View
-                </h2>
-                <div className="d-flex justify-content-between align-items-center">
+                <div className="d-flex justify-content-between align-items-center mb-3">
+                  <h2 className="h5 mb-0 d-flex align-items-center">
+                    <FaCalendarAlt size={20} className="me-2" />
+                    Mood History
+                  </h2>
+                  <button 
+                    className="btn btn-sm btn-outline-light d-lg-none d-flex align-items-center"
+                    onClick={() => setShowMobileFilters(!showMobileFilters)}
+                  >
+                    <FaFilter size={14} className="me-1" />
+                    <span>Filters</span>
+                  </button>
+                </div>
+                
+                <div className={`d-flex justify-content-between align-items-center ${showMobileFilters ? 'd-block' : 'd-none d-lg-block'}`}>
                   <small className="text-light">
                     {formatDisplayDate(dateRange.start)} - {formatDisplayDate(dateRange.end)}
                   </small>
-                  <div className="btn-group btn-group-sm">
+                  <div className="btn-group btn-group-sm mt-2 mt-lg-0">
                     {['week', 'month'].map((range) => (
                       <button
                         key={range}
                         className={`btn ${timeRange === range ? 'btn-light' : 'btn-outline-light'}`}
-                        onClick={() => setTimeRange(range)}
+                        onClick={() => {
+                          setTimeRange(range);
+                          setShowMobileFilters(false);
+                        }}
                         disabled={loading}
                       >
                         {range.charAt(0).toUpperCase() + range.slice(1)}
