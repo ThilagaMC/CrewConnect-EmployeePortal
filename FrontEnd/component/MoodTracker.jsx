@@ -415,8 +415,8 @@ function MoodTracker({ username, userId }) {
                     className="btn btn-sm btn-outline-light d-lg-none d-flex align-items-center"
                     onClick={() => setShowMobileFilters(!showMobileFilters)}
                   >
-                    <FaFilter size={14} className="me-1" />
-                    <span>Filters</span>
+                    {/* <FaFilter size={14} className="me-1" />
+                    <span>Filters</span> */}
                   </button>
                 </div>
                 
