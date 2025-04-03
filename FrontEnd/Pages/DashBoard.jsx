@@ -1103,8 +1103,6 @@ const Dashboard = () => {
                   href="#"
                   className="btn btn-outline-primary btn-sm text-start rounded-pill px-3 py-2 d-flex align-items-center"
                 >
-                  <i className="bi bi-gear me-2 fs-6"></i>
-                  <span className="text-truncate">Settings</span>
                 </motion.a>
               </div>
             </div>
