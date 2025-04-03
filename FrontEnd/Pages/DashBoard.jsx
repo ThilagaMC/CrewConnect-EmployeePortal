@@ -1098,12 +1098,6 @@ const Dashboard = () => {
                   <i className="bi bi-graph-up me-2 fs-6"></i>
                   <span className="text-truncate">Analytics</span>
                 </motion.a>
-                <motion.a
-                  whileHover={{ x: 5 }}
-                  href="#"
-                  className="btn btn-outline-primary btn-sm text-start rounded-pill px-3 py-2 d-flex align-items-center"
-                >
-                </motion.a>
               </div>
             </div>
           </div>
