@@ -1040,241 +1040,241 @@ const Dashboard = () => {
         </div>
 
         {/* Quick Links and Leave Requests */}
-        <div className="row">
-          {/* Quick Links & Contacts */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="col-12 col-lg-6 mb-4"
-          >
-            <div className="card shadow-sm h-100 border-0 rounded-3 overflow-hidden">
-              <div className="card-header bg-white border-bottom-0 py-3">
-                <h5 className="mb-0 text-dark fw-bold">
-                  <i
-                    className="bi bi-link-45deg me-2"
-                    style={{ color: "#6574cd" }}
-                  ></i>
-                  Quick Links & Contacts
-                </h5>
+        <div className="row g-4">
+  {/* Quick Links & Contacts */}
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    className="col-12 col-lg-6"
+  >
+    <div className="card shadow-sm h-100 border-0 rounded-3 overflow-hidden">
+      <div className="card-header bg-white border-bottom-0 py-3">
+        <h5 className="mb-0 text-dark fw-bold">
+          <i
+            className="bi bi-link-45deg me-2"
+            style={{ color: "#6574cd" }}
+          ></i>
+          Quick Links & Contacts
+        </h5>
+      </div>
+      <div className="card-body pt-0">
+        <div className="row g-3">
+          <div className="col-12 col-md-6">
+            <div className="p-3 bg-light rounded-3 h-100">
+              <h6 className="text-uppercase text-muted mb-3 fw-bold fs-6">
+                Quick Access
+              </h6>
+              <div className="d-grid gap-2">
+                <motion.a
+                  whileHover={{ x: 5 }}
+                  href="#"
+                  className="btn btn-outline-primary btn-sm text-start rounded-pill px-3 py-2 d-flex align-items-center"
+                >
+                  <i className="bi bi-file-earmark-text me-2 fs-6"></i>
+                  <span className="text-truncate">Documentation</span>
+                </motion.a>
+                <motion.a
+                  whileHover={{ x: 5 }}
+                  href="#"
+                  className="btn btn-outline-primary btn-sm text-start rounded-pill px-3 py-2 d-flex align-items-center"
+                >
+                  <i className="bi bi-calendar-event me-2 fs-6"></i>
+                  <span className="text-truncate">Calendar</span>
+                </motion.a>
+                <motion.a
+                  whileHover={{ x: 5 }}
+                  href="#"
+                  className="btn btn-outline-primary btn-sm text-start rounded-pill px-3 py-2 d-flex align-items-center"
+                >
+                  <i className="bi bi-people me-2 fs-6"></i>
+                  <span className="text-truncate">Team Directory</span>
+                </motion.a>
+                <motion.a
+                  whileHover={{ x: 5 }}
+                  href="#"
+                  className="btn btn-outline-primary btn-sm text-start rounded-pill px-3 py-2 d-flex align-items-center"
+                >
+                  <i className="bi bi-graph-up me-2 fs-6"></i>
+                  <span className="text-truncate">Analytics</span>
+                </motion.a>
+                <motion.a
+                  whileHover={{ x: 5 }}
+                  href="#"
+                  className="btn btn-outline-primary btn-sm text-start rounded-pill px-3 py-2 d-flex align-items-center"
+                >
+                  <i className="bi bi-gear me-2 fs-6"></i>
+                  <span className="text-truncate">Settings</span>
+                </motion.a>
               </div>
-              <div className="card-body pt-0">
-                <div className="row g-3">
-                  <div className="col-12 col-md-6">
-                    <div className="p-2 p-sm-3 bg-light rounded-3 h-100">
-                      <h6 className="text-uppercase text-muted mb-2 mb-sm-3 fw-bold small">
-                        Quick Access
-                      </h6>
-                      <div className="d-grid gap-1 gap-sm-2">
-                        <motion.a
-                          whileHover={{ x: 5 }}
-                          href="#"
-                          className="btn btn-outline-primary btn-sm text-start rounded-pill px-2 px-sm-3 py-1 py-sm-2 d-flex align-items-center"
-                        >
-                          <i className="bi bi-file-earmark-text me-2 fs-6"></i>
-                          <span className="text-truncate">Documentation</span>
-                        </motion.a>
-                        <motion.a
-                          whileHover={{ x: 5 }}
-                          href="#"
-                          className="btn btn-outline-primary btn-sm text-start rounded-pill px-2 px-sm-3 py-1 py-sm-2 d-flex align-items-center"
-                        >
-                          <i className="bi bi-calendar-event me-2 fs-6"></i>
-                          <span className="text-truncate">Calendar</span>
-                        </motion.a>
-                        <motion.a
-                          whileHover={{ x: 5 }}
-                          href="#"
-                          className="btn btn-outline-primary btn-sm text-start rounded-pill px-2 px-sm-3 py-1 py-sm-2 d-flex align-items-center"
-                        >
-                          <i className="bi bi-people me-2 fs-6"></i>
-                          <span className="text-truncate">Team Directory</span>
-                        </motion.a>
-                        <motion.a
-                          whileHover={{ x: 5 }}
-                          href="#"
-                          className="btn btn-outline-primary btn-sm text-start rounded-pill px-2 px-sm-3 py-1 py-sm-2 d-flex align-items-center"
-                        >
-                          <i className="bi bi-graph-up me-2 fs-6"></i>
-                          <span className="text-truncate">Analytics</span>
-                        </motion.a>
-                        <motion.a
-                          whileHover={{ x: 5 }}
-                          href="#"
-                          className="btn btn-outline-primary btn-sm text-start rounded-pill px-2 px-sm-3 py-1 py-sm-2 d-flex align-items-center"
-                        >
-                          <i className="bi bi-gear me-2 fs-6"></i>
-                          <span className="text-truncate">Settings</span>
-                        </motion.a>
-                      </div>
-                    </div>
-                  </div>
+            </div>
+          </div>
 
-                  <div className="col-12 col-md-6 mt-3 mt-md-0">
-                    <div className="p-2 p-sm-3 bg-light rounded-3 h-100">
-                      <h6 className="text-uppercase text-muted mb-2 mb-sm-3 fw-bold small">
-                        Contact Support
-                      </h6>
-                      <ul className="list-unstyled mb-3 mb-sm-4">
-                        <li className="mb-2 mb-sm-3 d-flex align-items-start">
-                          <div className="icon-circle bg-primary-light text-primary me-2 me-sm-3 flex-shrink-0">
-                            <i className="bi bi-envelope fs-5"></i>
-                          </div>
-                          <div className="w-100">
-                            <small className="text-muted d-block">Email</small>
-                            <a
-                              href="mailto:support@example.com"
-                              className="text-decoration-none text-truncate d-block"
-                            >
-                              support@example.com
-                            </a>
-                          </div>
-                        </li>
-                        <li className="mb-2 mb-sm-3 d-flex align-items-start">
-                          <div className="icon-circle bg-primary-light text-primary me-2 me-sm-3 flex-shrink-0">
-                            <i className="bi bi-telephone fs-5"></i>
-                          </div>
-                          <div className="w-100">
-                            <small className="text-muted d-block">Phone</small>
-                            <a
-                              href="tel:+15551234567"
-                              className="text-decoration-none text-truncate d-block"
-                            >
-                              +1 (555) 123-4567
-                            </a>
-                          </div>
-                        </li>
-                        <li className="d-flex align-items-start">
-                          <div className="icon-circle bg-primary-light text-primary me-2 me-sm-3 flex-shrink-0">
-                            <i className="bi bi-geo-alt fs-5"></i>
-                          </div>
-                          <div className="w-100">
-                            <small className="text-muted d-block">
-                              Address
-                            </small>
-                            <span className="text-truncate d-block">
-                              123 Main St, City
-                            </span>
-                          </div>
-                        </li>
-                      </ul>
-
-                      <div className="mt-3 mt-sm-4">
-                        <h6 className="text-uppercase text-muted mb-2 mb-sm-3 fw-bold small">
-                          Follow Us
-                        </h6>
-                        <div className="d-flex gap-1 gap-sm-2 flex-wrap">
-                          <motion.a
-                            whileHover={{ y: -3 }}
-                            href="#"
-                            className="btn btn-icon btn-sm btn-outline-primary rounded-circle"
-                          >
-                            <i className="bi bi-facebook"></i>
-                          </motion.a>
-                          <motion.a
-                            whileHover={{ y: -3 }}
-                            href="#"
-                            className="btn btn-icon btn-sm btn-outline-primary rounded-circle"
-                          >
-                            <i className="bi bi-twitter-x"></i>
-                          </motion.a>
-                          <motion.a
-                            whileHover={{ y: -3 }}
-                            href="#"
-                            className="btn btn-icon btn-sm btn-outline-primary rounded-circle"
-                          >
-                            <i className="bi bi-linkedin"></i>
-                          </motion.a>
-                          <motion.a
-                            whileHover={{ y: -3 }}
-                            href="#"
-                            className="btn btn-icon btn-sm btn-outline-primary rounded-circle"
-                          >
-                            <i className="bi bi-instagram"></i>
-                          </motion.a>
-                        </div>
-                      </div>
-                    </div>
+          <div className="col-12 col-md-6">
+            <div className="p-3 bg-light rounded-3 h-100">
+              <h6 className="text-uppercase text-muted mb-3 fw-bold fs-6">
+                Contact Support
+              </h6>
+              <ul className="list-unstyled mb-4">
+                <li className="mb-3 d-flex align-items-start">
+                  <div className="icon-circle bg-primary-light text-primary me-3 flex-shrink-0">
+                    <i className="bi bi-envelope fs-5"></i>
                   </div>
+                  <div className="w-100">
+                    <small className="text-muted d-block">Email</small>
+                    <a
+                      href="mailto:support@example.com"
+                      className="text-decoration-none text-truncate d-block"
+                    >
+                      support@example.com
+                    </a>
+                  </div>
+                </li>
+                <li className="mb-3 d-flex align-items-start">
+                  <div className="icon-circle bg-primary-light text-primary me-3 flex-shrink-0">
+                    <i className="bi bi-telephone fs-5"></i>
+                  </div>
+                  <div className="w-100">
+                    <small className="text-muted d-block">Phone</small>
+                    <a
+                      href="tel:+15551234567"
+                      className="text-decoration-none text-truncate d-block"
+                    >
+                      +1 (555) 123-4567
+                    </a>
+                  </div>
+                </li>
+                <li className="d-flex align-items-start">
+                  <div className="icon-circle bg-primary-light text-primary me-3 flex-shrink-0">
+                    <i className="bi bi-geo-alt fs-5"></i>
+                  </div>
+                  <div className="w-100">
+                    <small className="text-muted d-block">Address</small>
+                    <span className="text-truncate d-block">
+                      123 Main St, City
+                    </span>
+                  </div>
+                </li>
+              </ul>
+
+              <div className="mt-4">
+                <h6 className="text-uppercase text-muted mb-3 fw-bold fs-6">
+                  Follow Us
+                </h6>
+                <div className="d-flex gap-2 flex-wrap">
+                  <motion.a
+                    whileHover={{ y: -3 }}
+                    href="#"
+                    className="btn btn-icon btn-sm btn-outline-primary rounded-circle"
+                  >
+                    <i className="bi bi-facebook"></i>
+                  </motion.a>
+                  <motion.a
+                    whileHover={{ y: -3 }}
+                    href="#"
+                    className="btn btn-icon btn-sm btn-outline-primary rounded-circle"
+                  >
+                    <i className="bi bi-twitter-x"></i>
+                  </motion.a>
+                  <motion.a
+                    whileHover={{ y: -3 }}
+                    href="#"
+                    className="btn btn-icon btn-sm btn-outline-primary rounded-circle"
+                  >
+                    <i className="bi bi-linkedin"></i>
+                  </motion.a>
+                  <motion.a
+                    whileHover={{ y: -3 }}
+                    href="#"
+                    className="btn btn-icon btn-sm btn-outline-primary rounded-circle"
+                  >
+                    <i className="bi bi-instagram"></i>
+                  </motion.a>
                 </div>
               </div>
             </div>
-          </motion.div>
-
-          {/* Pending Leave Requests */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="col-lg-6 mb-4"
-          >
-            <div className="card shadow-sm h-100 border-0 rounded-3 overflow-hidden">
-              <div className="card-header bg-white border-bottom-0 py-3 d-flex justify-content-between align-items-center">
-                <h5 className="mb-0 text-dark fw-bold">
-                  <i
-                    className="bi bi-hourglass-split me-2"
-                    style={{ color: "#ffc145" }}
-                  ></i>
-                  Pending Leave Requests
-                </h5>
-                <span className="badge rounded-pill bg-danger">
-                  {stats.pendingRequests}
-                </span>
-              </div>
-              <div className="card-body pt-0">
-                {leaveRequests.filter((req) => req.status === "Pending")
-                  .length > 0 ? (
-                  <div className="table-responsive">
-                    <table className="table table-hover align-middle mb-0">
-                      <thead>
-                        <tr>
-                          <th className="border-top-0 ps-3">Type</th>
-                          <th className="border-top-0">From Date</th>
-                          <th className="border-top-0">To Date</th>
-                          <th className="border-top-0">Days</th>
-                          <th className="border-top-0 pe-3">Status</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {leaveRequests
-                          .filter((req) => req.status === "Pending")
-                          .map((leave) => (
-                            <motion.tr
-                              key={leave.id || leave._id}
-                              whileHover={{
-                                backgroundColor: "rgba(101, 116, 205, 0.05)",
-                              }}
-                            >
-                              <td className="ps-3">
-                                {leave.leaveType || leave.type}
-                              </td>
-                              <td>{formatDate(leave.fromDate)}</td>
-                              <td>{formatDate(leave.toDate)}</td>
-                              <td>
-                                {calculateWorkingDays(
-                                  leave.fromDate,
-                                  leave.toDate
-                                )}
-                              </td>
-                              <td className="pe-3">
-                                <span className="badge rounded-pill bg-warning text-dark">
-                                  Pending
-                                </span>
-                              </td>
-                            </motion.tr>
-                          ))}
-                      </tbody>
-                    </table>
-                  </div>
-                ) : (
-                  <div className="text-center py-4">
-                    <p className="text-muted">No pending leave requests</p>
-                  </div>
-                )}
-              </div>
-            </div>
-          </motion.div>
+          </div>
         </div>
+      </div>
+    </div>
+  </motion.div>
+
+  {/* Pending Leave Requests */}
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    className="col-12 col-lg-6"
+  >
+    <div className="card shadow-sm h-100 border-0 rounded-3 overflow-hidden">
+      <div className="card-header bg-white border-bottom-0 py-3 d-flex justify-content-between align-items-center">
+        <h5 className="mb-0 text-dark fw-bold">
+          <i
+            className="bi bi-hourglass-split me-2"
+            style={{ color: "#ffc145" }}
+          ></i>
+          Pending Leave Requests
+        </h5>
+        <span className="badge rounded-pill bg-danger">
+          {stats.pendingRequests}
+        </span>
+      </div>
+      <div className="card-body pt-0">
+        {leaveRequests.filter((req) => req.status === "Pending").length > 0 ? (
+          <div className="table-responsive">
+            <table className="table table-hover align-middle mb-0">
+              <thead className="table-light">
+                <tr>
+                  <th className="border-top-0 ps-3">Type</th>
+                  <th className="border-top-0">From Date</th>
+                  <th className="border-top-0">To Date</th>
+                  <th className="border-top-0">Days</th>
+                  <th className="border-top-0 pe-3">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {leaveRequests
+                  .filter((req) => req.status === "Pending")
+                  .map((leave) => (
+                    <motion.tr
+                      key={leave.id || leave._id}
+                      whileHover={{
+                        backgroundColor: "rgba(101, 116, 205, 0.05)",
+                      }}
+                    >
+                      <td className="ps-3">
+                        <span className="d-inline-block text-truncate" style={{maxWidth: '100px'}}>
+                          {leave.leaveType || leave.type}
+                        </span>
+                      </td>
+                      <td>{formatDate(leave.fromDate)}</td>
+                      <td>{formatDate(leave.toDate)}</td>
+                      <td>
+                        {calculateWorkingDays(
+                          leave.fromDate,
+                          leave.toDate
+                        )}
+                      </td>
+                      <td className="pe-3">
+                        <span className="badge rounded-pill bg-warning text-dark">
+                          Pending
+                        </span>
+                      </td>
+                    </motion.tr>
+                  ))}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <div className="d-flex flex-column align-items-center justify-content-center py-5">
+            <i className="bi bi-hourglass-top fs-1 text-muted mb-3"></i>
+            <p className="text-muted mb-0">No pending leave requests</p>
+          </div>
+        )}
+      </div>
+    </div>
+  </motion.div>
+</div>
       </div>
 
       {/* Custom Styles */}
