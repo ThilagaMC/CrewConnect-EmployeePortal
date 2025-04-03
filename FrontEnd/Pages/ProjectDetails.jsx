@@ -286,7 +286,7 @@ const ProjectManagement = () => {
               <div key={project._id} className="col-12 col-md-6 col-lg-4 col-xl-3">
                 <div className="card h-100 shadow-sm border-0">
                   <div className="card-header bg-light d-flex justify-content-between align-items-center">
-                    <h5 className="mb-0 text-primary">{project.name}</h5>
+                    <h5 className="mb-0">{project.name}</h5>
                     {userRole === "Manager" && (
                       <div className="d-flex gap-2">
                         <button
