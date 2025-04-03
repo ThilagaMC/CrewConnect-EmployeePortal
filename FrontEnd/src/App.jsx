@@ -126,7 +126,7 @@ const App = () => {
                       <Route path="/dashboard" element={<Dashboard />} />
                       <Route path="/employees" element={<Employee />} />
 
-                      {["HR", "Admin"].includes(employeeData.role) ? (
+                      {["HR", "Admin","Manager"].includes(employeeData.role) ? (
                         <>
                           <Route
                             path="/attendance-report"
@@ -140,7 +140,7 @@ const App = () => {
                         />
                       )}
 
-                      {["HR", "Admin"].includes(employeeData.role) ? (
+                      {["HR", "Admin","Manager"].includes(employeeData.role) ? (
                         <>
                           <Route
                             path="/mood-report"
