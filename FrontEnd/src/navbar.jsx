@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { IonIcon } from "@ionic/react";
 import { useNavigate } from "react-router-dom";
 import {
-  menuOutline,
+  listOutline,
   gridOutline,
   personOutline,
   readerOutline,
@@ -107,7 +107,7 @@ const Navbar = ({ children }) => {
       {isMobile && (
         <div className="mobile-header">
           <button className="menu-toggle" onClick={toggleMenu}>
-            <IonIcon icon={menuOutline} />
+            <IonIcon icon={listOutline} />
           </button>
           <div className="mobile-logo">CrewConnect</div>
         </div>
