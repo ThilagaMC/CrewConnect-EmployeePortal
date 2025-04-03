@@ -96,7 +96,7 @@ const ProjectManagement = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (userRole !== "Admin") {
+    if (userRole !== "Manager") {
       alert("Only admins can manage projects.");
       return;
     }
@@ -124,7 +124,7 @@ const ProjectManagement = () => {
 
   // Project CRUD operations
   const handleEdit = (id) => {
-    if (userRole !== "Admin") {
+    if (userRole !== "Manager") {
       alert("Only admins can edit projects.");
       return;
     }
@@ -148,7 +148,7 @@ const ProjectManagement = () => {
   };
 
   const handleDelete = async (id) => {
-    if (userRole !== "Admin") {
+    if (userRole !== "Manager") {
       alert("Only admins can delete projects.");
       return;
     }
@@ -241,7 +241,7 @@ const ProjectManagement = () => {
                 </p>
               </div>
             </div>
-            {userRole === "Admin" && (
+            {userRole === "Manager" && (
               <button
                 className="btn btn-light btn-lg rounded-pill px-4 py-2"
                 onClick={() => setShowModal(true)}
@@ -287,7 +287,7 @@ const ProjectManagement = () => {
                 <div className="card h-100 shadow-sm border-0">
                   <div className="card-header bg-light d-flex justify-content-between align-items-center">
                     <h5 className="mb-0 text-primary">{project.name}</h5>
-                    {userRole === "Admin" && (
+                    {userRole === "Manager" && (
                       <div className="d-flex gap-2">
                         <button
                           className="btn btn-sm btn-outline-primary rounded-circle p-2"
@@ -356,7 +356,7 @@ const ProjectManagement = () => {
                     </div>
                   </div>
                   <div className="card-footer bg-transparent border-top-0">
-                    {userRole === "Admin" ?(<button 
+                    {userRole === "Manager" ?(<button 
                       className="btn btn-outline-primary w-100"
                       onClick={() => handleEdit(project._id)}
                     >
@@ -376,7 +376,7 @@ const ProjectManagement = () => {
               <i className="bi bi-folder-x text-muted" style={{ fontSize: "3rem" }}></i>
               <h4 className="mt-3">No projects found</h4>
               <p className="text-muted">Try adjusting your search or create a new project</p>
-              {userRole === "Admin" && (
+              {userRole === "Manager" && (
                 <button
                   className="btn btn-primary mt-3"
                   onClick={() => setShowModal(true)}

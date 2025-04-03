@@ -487,7 +487,7 @@ const UserList = () => {
                   <i className="bi bi-people fs-1 text-muted"></i>
                   <h4 className="mt-3">No employees found</h4>
                   <p className="text-muted">Try adjusting your search or filters</p>
-                  {(userRole === "Admin" || userRole === "HR") && (
+                  {(userRole === "HR") && (
                     <button className="btn btn-primary mt-3" onClick={handleAdd}>
                       Add New Employee
                     </button>
@@ -538,7 +538,7 @@ const UserList = () => {
                         </div>
                       </div>
                       <div className="ems-card-footer">
-                        {(userRole === "Admin" || userRole === "HR") && (
+                        {(userRole === "HR") && (
                           <>
                             <button
                               className="btn btn-sm btn-outline-primary"
