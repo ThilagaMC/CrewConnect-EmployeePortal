@@ -254,8 +254,8 @@ const UserList = () => {
   };
 
   const handleEditClick = (employee) => {
-    if (userRole !== "Admin" && userRole !== "HR") {
-      alert("Only Admin or HR can edit employees.");
+    if (userRole !== "HR") {
+      alert("Only HR can edit employees.");
       return;
     }
 
@@ -294,8 +294,8 @@ const UserList = () => {
   };
 
   const confirmDelete = (employee) => {
-    if (userRole !== "Admin" && userRole !== "HR") {
-      alert("Only Admin or HR can delete employees.");
+    if (userRole !== "HR") {
+      alert("Only HR can delete employees.");
       return;
     }
     setSelectedEmployee(employee);
@@ -458,7 +458,7 @@ const UserList = () => {
             </div>
             
             <div className="col-md-2 d-flex justify-content-end">
-              {(userRole === "Admin" || userRole === "HR") && (
+              {(userRole === "HR") && (
                 <button
                   className="btn btn-primary d-flex align-items-center"
                   onClick={handleAdd}
