@@ -65,7 +65,7 @@ CrewConnect
 
 ### **1. Clone the Repository**  
 ```sh
-git clone https://github.com/ThilagaMC/CrewConnect-EmployeePortal.git
+git clone 
 cd CrewConnect-EmployeePortal
 ```
 
