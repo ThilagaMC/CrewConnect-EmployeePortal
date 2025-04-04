@@ -138,7 +138,7 @@ npm start
 
 ## **🖼 Demo Video** 
 
-- **Demo**: (https://www.linkedin.com/posts/mc-thilaga_employeemanagement-hrtech-dashboard-activity-7313575296631259136-kWVG?utm_source=share&utm_medium=member_desktop&rcm=ACoAADFZyMsBJ_giC-reJm6hzm4LrSQZrLJCWiQ)  
+- **Link**: https://www.linkedin.com/posts/mc-thilaga_employeemanagement-hrtech-dashboard-activity-7313575296631259136-kWVG?utm_source=share&utm_medium=member_desktop&rcm=ACoAADFZyMsBJ_giC-reJm6hzm4LrSQZrLJCWiQ
 
 ---
 
