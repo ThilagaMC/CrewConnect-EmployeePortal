@@ -36,7 +36,6 @@ CrewConnect
 ### **🔐 Security & Authentication**  
 - **JWT Authentication**: Secure login system.  
 - **Password Encryption**: BCrypt for stored passwords.  
-- **Session Management**: Auto-logout after inactivity.  
 
 ### **📱 Responsive Design**  
 - Works on **desktop, tablet, and mobile**.  
