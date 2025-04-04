@@ -100,31 +100,6 @@ npm start
 - **Backend API**: `https://crewconnect-employeeportal.onrender.com`  
 
 ---
-```  
-CrewConnect-EmployeePortal/  
-├── client/               # React Frontend  
-│   ├── public/           # Static files  
-│   ├── src/              # React components  
-│   │   ├── components/   # Reusable UI  
-│   │   ├── pages/        # Main views (Dashboard, Tasks, etc.)  
-│   │   ├── App.js        # Main App Router  
-│   │   └── index.js      # React entry point  
-│   └── package.json      # Frontend dependencies  
-│  
-├── server/               # Node.js Backend  
-│   ├── models/           # MongoDB Schemas  
-│   ├── routes/           # API Endpoints  
-│   ├── controllers/      # Business logic  
-│   ├── middleware/       # Auth & validation  
-│   ├── config/           # DB & JWT setup  
-│   └── server.js         # Express entry point  
-│  
-├── .gitignore  
-├── README.md             # This file  
-└── package.json          # Root dependencies (if any)  
-```  
-
----
   
 ## **🔌 API Endpoints**
 
@@ -163,6 +138,7 @@ CrewConnect-EmployeePortal/
 ---
 
 ## **🖼 Demo Video** 
+
 👉 [https://www.linkedin.com/posts/mc-thilaga_employeemanagement-hrtech-dashboard-activity-7313575296631259136-kWVG?utm_source=share&utm_medium=member_desktop&rcm=ACoAADFZyMsBJ_giC-reJm6hzm4LrSQZrLJCWiQ](#) 
 ---
 
