@@ -4,13 +4,12 @@ An Open-Source HR & Workforce Management Solution
 CrewConnect
 
 ## **📌 Overview**  
-(![alt text](image.png))
+![alt text](image.png)
+
 **CrewConnect** is a **full-stack employee management system** designed to modernize HR operations, team collaboration, and workforce analytics. It serves as a centralized platform for businesses to manage employee data, attendance, tasks, and reporting in one place.  
 
 ### **🔗 Live Demo**  
-👉 [Demo Link](#) *(If deployed, add Netlify/Vercel/Heroku link here)*  
-
----
+👉 [https://crewconnect-employeeportal.netlify.app/](#) 
 
 ## **✨ Key Features**  
 
@@ -25,7 +24,7 @@ CrewConnect
 - **Timesheets**: Automated attendance reports.  
 
 ### **📌 Task Management**  
-- **Assign Tasks**: Managers can delegate tasks with deadlines.  
+- **Tasks**: Manage there own ToDo Tracker 
 - **Progress Tracking**: Employees update task status (To-Do, In Progress, Done).  
 - **Notifications**: Alerts for new tasks and deadlines.  
 
@@ -53,9 +52,7 @@ CrewConnect
 | **Database**       | MongoDB (Mongoose) |  
 | **Authentication** | JWT, BCrypt |  
 | **API Testing**    | Postman |  
-| **Version Control**| Git, GitHub |  
-
-*(Update based on the actual stack used in the repo.)*  
+| **Version Control**| GitHub |  
 
 ---
 
@@ -73,7 +70,7 @@ cd CrewConnect-EmployeePortal
 ```
 
 ### **2. Install Dependencies**  
-*(If frontend & backend are in separate folders)*  
+
 ```sh
 # Install backend dependencies
 cd server
@@ -89,23 +86,18 @@ Create a `.env` file in the `server` folder:
 ```env
 PORT=5000
 MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.example.mongodb.net/crewconnect
-JWT_SECRET=your_strong_jwt_secret_here
 ```
-
 ### **4. Run the Application**  
-#### **Option A: Run Frontend & Backend Separately**  
+#### Run Frontend & Backend Separately**  
 ```sh
 # Start backend (from /server)
-npm start
+node server.js
 
 # Start frontend (from /client)
 npm start
 ```
-- **Frontend**: `http://localhost:3000`  
-- **Backend API**: `http://localhost:5000`  
-
-#### **Option B: Using Docker (if configured)**  
-*(Add Docker instructions if applicable)*  
+- **Frontend**: `https://crewconnect-employeeportal.netlify.app/`  
+- **Backend API**: `https://crewconnect-employeeportal.onrender.com`  
 
 ---
 
@@ -135,56 +127,51 @@ CrewConnect-EmployeePortal/
 ```  
 
 ---
+  
+## **🔌 API Endpoints**
 
-## **📜 API Documentation** *(Optional Section)*  
-*(If the backend has API routes, summarize key endpoints here.)*  
+### **Authentication**
+- `POST /register` - Create new account  
+  ```json
+  { "email": "user@example.com", "password": "secret123", "name": "John Doe" }
+  ```
+- `POST /login` - Login user  
+  ```json
+  { "email": "user@example.com", "password": "secret123" }
+  ```
 
-| **Endpoint**       | **Method** | **Description**          |  
-|--------------------|-----------|--------------------------|  
-| `/api/auth/login`  | `POST`    | Employee login           |  
-| `/api/employees`   | `GET`     | Fetch all employees      |  
-| `/api/tasks`       | `POST`    | Create a new task        |  
-| `/api/attendance`  | `GET`     | Get attendance records   |  
+### **User Management**
+- `GET /users` - Get all users  
+- `GET /users/:id` - Get user by ID  
+- `PUT /users/:id` - Update user profile  
 
-*(For full API docs, check `server/routes/` or Postman collection.)*  
+### **Attendance**
+- `POST /api/attendance/clock-in` - Start work shift  
+- `POST /api/attendance/clock-out` - End work shift  
+- `GET /api/attendance/:userId` - Get attendance history  
+
+### **Leave Requests**
+- `POST /leave-requests` - Submit new leave request  
+  ```json
+  { "userId": "123", "startDate": "2023-01-01", "endDate": "2023-01-05" }
+  ```
+- `GET /leave-requests` - Get all requests (admin only)  
+
+### **Other Features**
+- `GET /projects` - List all projects  
+- `POST /todos` - Create new task  
+- `POST /moods` - Submit mood tracker entry  
 
 ---
 
-## **🖼 Screenshots** *(Optional)*  
-*(Add UI screenshots if available.)*  
-1. **Login Page**  
-   ![Login](https://via.placeholder.com/600x400?text=Login+Page)  
-2. **Dashboard**  
-   ![Dashboard](https://via.placeholder.com/600x400?text=Employee+Dashboard)  
-3. **Task Management**  
-   ![Tasks](https://via.placeholder.com/600x400?text=Task+Management)  
-
----
-
-## **🤝 How to Contribute**  
-1. **Fork** the repository.  
-2. Create a **new branch** (`git checkout -b feature/new-feature`).  
-3. Commit changes (`git commit -m "Add new feature"`).  
-4. Push to the branch (`git push origin feature/new-feature`).  
-5. Open a **Pull Request**.  
-
----
-
-## **📜 License**  
-This project is licensed under the **MIT License** - see [LICENSE](LICENSE) file for details.  
-
+## **🖼 Demo Video** 
+ <video controls src="Demo.mp4" title="Title"></video>
 ---
 
 ## **📧 Contact & Support**  
 - **GitHub**: [@ThilagaMC](https://github.com/ThilagaMC)  
-- **Email**: *(If available)*  
-- **Issues**: [Report a Bug](https://github.com/ThilagaMC/CrewConnect-EmployeePortal/issues)  
-
+- **Email**: *thilaga2k2@gmail.com*  
 ---
 
 ### **🎉 Thank You!**  
 If you find this project useful, consider giving it a **⭐ Star** on GitHub!  
-
---- 
-
-Would you like me to **add deployment guides** (e.g., Heroku, Netlify, AWS) or **expand any section**? Let me know! 🚀
